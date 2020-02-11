@@ -1,0 +1,121 @@
+version: '3.5'
+services:
+  fastdfs:
+    image: qbanxiaoli/fastdfs
+    # 该容器是否需要开机启动+自动重启。若需要，则取消注释。
+    restart: always
+    container_name: fastdfs
+    ports:
+      - "80:80"
+      - "22122:22122"
+      - "23000:23000"
+      - "11411:11411"
+    environment:
+      # nginx服务端口,默认80端口，可修改
+      WEB_PORT: 80
+      # tracker_server服务端口，默认22122端口，可修改
+      FDFS_PORT: 22122
+      # fastdht服务端口，默认11411端口，可修改
+      FDHT_PORT: 11411
+      # docker所在宿主机IP内网地址，默认使用eth0网卡的地址
+      IP: 10.206.0.17
+    volumes:
+      # 将本地目录映射到docker容器内的fastdfs数据存储目录，将fastdfs文件存储到主机上，以免每次重建docker容器，之前存储的文件就丢失了。
+      # 类似于redis缓存功能
+      - ~/fastdfs:/var/local
+    # 由于windows和unix识别不了host网络，目前需要新建网段，强制指定容器ip与宿主机ip一致
+    # 网络模式为host，可不暴露端口，即直接使用宿主机的网络端口，只适用于linux系统
+    network_mode: host
+    
+  cerebro:
+    image: lmenezes/cerebro:0.8.5
+    # 该容器是否需要开机启动+自动重启。若需要，则取消注释。
+    restart: always
+    container_name: cerebro
+    ports:
+      - "9000:9000"
+    command:
+      - -Dhosts.0.host=http://129.211.163.125:9200
+      # - -Dhosts.0.host=http://localhost:9200
+    networks:
+      - es7net
+
+  kibana:
+    image: kibana:7.5.2
+    # 该容器是否需要开机启动+自动重启。若需要，则取消注释。
+    restart: always
+    container_name: kibana
+    environment:
+      - I18N_LOCALE=zh-CN
+      - XPACK_GRAPH_ENABLED=true
+      - TIMELION_ENABLED=true
+      - ELASTICSEARCH_HOSTS=http://129.211.163.125:9200
+      # - ELASTICSEARCH_HOSTS=http://localhost:9200
+    ports:
+      - "5601:5601"
+    networks:
+      - es7net
+
+  elasticsearch:
+    image: elasticsearch:7.5.2
+    # 该容器是否需要开机启动+自动重启。若需要，则取消注释。
+    restart: always
+    container_name: es7_01
+    environment:
+      - cluster.name=printiin
+      - node.name=es7_01
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+      - discovery.seed_hosts=es7_01
+      - cluster.initial_master_nodes=es7_01
+      # - xpack.security.enabled=true
+      # - xpack.security.transport.ssl.enabled=true
+      - xpack.monitoring.collection.enabled=true
+      # - xpack.ml.enabled=true
+      # - xpack.graph.enabled=true
+      # - xpack.watcher.enabled=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - es7data1:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - es7net
+
+  # elasticsearch2:
+  #   image: elastic/elasticsearch:7.5.2
+  #   container_name: es7_02
+  #   environment:
+  #     - cluster.name=printiin
+  #     - node.name=es7_02
+  #     - bootstrap.memory_lock=true
+  #     - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+  #     - discovery.seed_hosts=es7_01,es7_02
+  #     - cluster.initial_master_nodes=es7_01,es7_02
+  #     # - xpack.security.enabled=true
+  #     # - xpack.security.transport.ssl.enabled=true
+  #     - xpack.monitoring.collection.enabled=true
+  #     # - xpack.ml.enabled=true
+  #     # - xpack.graph.enabled=true
+  #     # - xpack.watcher.enabled=true
+  #   ulimits:
+  #     memlock:
+  #       soft: -1
+  #       hard: -1
+  #   volumes:
+  #     - es7data2:/usr/share/elasticsearch/data
+  #   networks:
+  #     - es7net
+
+volumes:
+  es7data1:
+    driver: local
+  # es7data2:
+  #   driver: local
+
+networks:
+  es7net:
+    driver: bridge
