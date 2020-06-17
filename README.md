@@ -195,3 +195,8 @@ fdfs_test /etc/fdfs/client.conf upload index.html
 
 将该链接用浏览器打开即可
 ```
+
+###pm2监控示例
+```
+pm2 start npm --name "aw-front" -- run start --watch -save
+```
