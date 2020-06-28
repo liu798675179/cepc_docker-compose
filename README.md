@@ -201,9 +201,23 @@ fdfs_test /etc/fdfs/client.conf upload index.html
 pm2 start npm --name "aw-front" -- run start --watch -save
 ```
 
-### Nodejs安装
+### Node.js安装
 ```
 yum install -y gcc-c++ make
 curl -sL https://rpm.nodesource.com/setup_12.x | sudo -E bash -
-sudo yum install nodejs
+yum install nodejs
+```
+
+### MongoDB安装
+```
+vim /etc/yum.repos.d/mongodb-org-4.2.repo
+
+[mongodb-org-4.2]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
+
+yum install -y mongodb-org
 ```
