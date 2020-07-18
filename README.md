@@ -221,3 +221,8 @@ gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
 
 yum install -y mongodb-org
 ```
+
+### HmacSHA256
+```
+CryptoJS.enc.Hex.stringify(CryptoJS.HmacSHA256('timestamp=' + timestamp, 'YXXVbXP0hCaoXKgS9rDrU98be34F16b4bqFeHwoajZ2o3HlDZvPqUI0e43XV0mE6'))
+```
