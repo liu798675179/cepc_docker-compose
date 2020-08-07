@@ -226,3 +226,21 @@ yum install -y mongodb-org
 ```
 CryptoJS.enc.Hex.stringify(CryptoJS.HmacSHA256('timestamp=' + timestamp, 'YXXVbXP0hCaoXKgS9rDrU98be34F16b4bqFeHwoajZ2o3HlDZvPqUI0e43XV0mE6'))
 ```
+
+### redis安装
+```
+sudo yum install epel-release yum-utils
+sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+sudo yum-config-manager --enable remi
+
+sudo yum install redis
+
+sudo systemctl start redis
+sudo systemctl enable redis
+
+sudo systemctl status redis
+
+/etc/redis.conf
+
+sudo systemctl restart redis
+```
