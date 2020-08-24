@@ -223,6 +223,8 @@ esc
 :wq!
 
 yum install -y mongodb-org
+
+systemctl start mongod
 ```
 
 ### HmacSHA256
