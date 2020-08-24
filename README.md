@@ -211,14 +211,13 @@ npm config set registry https://registry.npm.taobao.org
 
 ### MongoDB安装
 ```
-vim /etc/yum.repos.d/mongodb-org-4.2.repo
+vim /etc/yum.repos.d/mongodb.repo
 
-[mongodb-org-4.2]
+[mongodb-org]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/x86_64/
-gpgcheck=1
+baseurl=https://mirrors.tuna.tsinghua.edu.cn/mongodb/yum/el$releasever/
+gpgcheck=0
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
 
 esc
 :wq!
