@@ -28,7 +28,7 @@ services:
     network_mode: host
     
   cerebro:
-    image: lmenezes/cerebro:0.8.5
+    image: lmenezes/cerebro:latest
     # 该容器是否需要开机启动+自动重启。若需要，则取消注释。
     restart: always
     container_name: cerebro
@@ -41,7 +41,7 @@ services:
       - es7net
 
   kibana:
-    image: kibana:7.5.2
+    image: kibana:7.9.2
     # 该容器是否需要开机启动+自动重启。若需要，则取消注释。
     restart: always
     container_name: kibana
@@ -57,7 +57,7 @@ services:
       - es7net
 
   elasticsearch:
-    image: elasticsearch:7.5.2
+    image: elasticsearch:7.9.2
     # 该容器是否需要开机启动+自动重启。若需要，则取消注释。
     restart: always
     container_name: es7_01
