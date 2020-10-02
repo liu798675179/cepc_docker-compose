@@ -35,7 +35,7 @@ services:
     ports:
       - "9000:9000"
     command:
-      - -Dhosts.0.host=http://129.211.163.125:9200
+      - -Dhosts.0.host=http://10.206.0.17:9200
       # - -Dhosts.0.host=http://localhost:9200
     networks:
       - es7net
@@ -49,7 +49,7 @@ services:
       - I18N_LOCALE=zh-CN
       - XPACK_GRAPH_ENABLED=true
       - TIMELION_ENABLED=true
-      - ELASTICSEARCH_HOSTS=http://129.211.163.125:9200
+      - ELASTICSEARCH_HOSTS=http://10.206.0.17:9200
       # - ELASTICSEARCH_HOSTS=http://localhost:9200
     ports:
       - "5601:5601"
