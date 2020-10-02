@@ -101,10 +101,10 @@ $ sudo yum install docker-compose
 ## <font color="#dd0000">注意：安装前，请修改docker-compose.yaml中的</font><br /> 
 ```
 IP: 10.206.0.17
-- -Dhosts.0.host=http://129.211.163.125:9200
-- ELASTICSEARCH_HOSTS=http://129.211.163.125:9200
+- -Dhosts.0.host=http://10.206.0.17:9200
+- ELASTICSEARCH_HOSTS=http://10.206.0.17:9200
 ```
-## <font color="#dd0000">将以上ip设置成为本机下的内网与外网ip</font><br />
+## <font color="#dd0000">将以上ip设置成为本机下的内网ip</font><br />
 
 ### a、将docker-compose.yaml文件放入某个文件夹内
 
