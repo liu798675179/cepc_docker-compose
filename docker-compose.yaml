@@ -27,16 +27,16 @@ services:
     # 网络模式为host，可不暴露端口，即直接使用宿主机的网络端口，只适用于linux系统
     network_mode: host
   
-  redis:
-    container_name: redis
-    image: redis:latest
-    restart: always
-    ports:
-      - 6379:6379
-    volumes:
-      - ./redis/data:/data
-    networks:
-      - es7net
+  # redis:
+  #   container_name: redis
+  #   image: redis:latest
+  #   restart: always
+  #   ports:
+  #     - 6379:6379
+  #   volumes:
+  #     - ./redis/data:/data
+  #   networks:
+  #     - es7net
 
   # mongo:
   #   container_name: mongo
