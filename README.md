@@ -206,6 +206,7 @@ npm config set registry https://registry.npm.taobao.org
 
 ### pm2监控示例
 ```
+npm i pm2 -g
 pm2 start npm --name "aw-front" -- run start --watch -save
 ```
 
