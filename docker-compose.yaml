@@ -75,6 +75,7 @@ services:
       - I18N_LOCALE=zh-CN
       - XPACK_GRAPH_ENABLED=true
       - TIMELION_ENABLED=true
+      - xpack.spaces.enabled=false
       - ELASTICSEARCH_HOSTS=http://172.26.42.137:9200
       # - ELASTICSEARCH_HOSTS=http://localhost:9200
     ports:
