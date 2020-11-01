@@ -259,7 +259,7 @@ yum install nginx
 systemctl start nginx
 ```
 
-###git安装
+### git安装
 ```
 yum install git
 cd /hume/git
