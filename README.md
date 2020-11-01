@@ -258,3 +258,14 @@ sudo systemctl restart redis
 yum install nginx
 systemctl start nginx
 ```
+
+###git安装
+```
+yum install git
+cd /hume/git
+mkdir xxx.git && cd xxx.git
+git init --bare
+# 创建hooks/post-recive
+git --work-tree=/home/front/ --git-dir=/home/git/xxx.git checkout -f
+```
+
