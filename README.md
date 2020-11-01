@@ -266,6 +266,7 @@ cd /hume/git
 mkdir xxx.git && cd xxx.git
 git init --bare
 # 创建hooks/post-recive
+# 更改权限0755
 git --work-tree=/home/front/ --git-dir=/home/git/xxx.git checkout -f
 ```
 
