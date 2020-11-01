@@ -252,3 +252,9 @@ sudo systemctl status redis
 
 sudo systemctl restart redis
 ```
+
+### nginx安装
+```
+yum install nginx
+systemctl start nginx
+```
