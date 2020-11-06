@@ -99,6 +99,7 @@ $ sudo yum install docker-compose
 ### 4、使用docker-compose安装这些软件
 
 ## <font color="#dd0000">注意：安装前，请修改docker-compose.yaml中的</font><br /> 
+### <font color="#dd0000">注意：更改端口，以防攻击</font>
 ```
 IP: 10.206.0.17
 - -Dhosts.0.host=http://10.206.0.17:9200
