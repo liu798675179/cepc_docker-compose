@@ -274,3 +274,7 @@ git --work-tree=/home/front/ --git-dir=/home/git/xxx.git checkout -f
 # /home/front必须存在
 ```
 
+### linux sed 文件中每行的开头添加引号末尾处添加引号逗号
+```
+sed 's/^/"/g;s/$/",/g' input.txt >> output.txt
+```
