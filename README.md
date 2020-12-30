@@ -231,6 +231,8 @@ yum install -y mongodb-org
 systemctl start mongod
 
 db.createUser({ user: "test",pwd: "1234",roles:[{ role: "userAdminAnyDatabase",db: "admin" }]})
+
+// readWrite
 ```
 
 ### HmacSHA256
