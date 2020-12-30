@@ -228,6 +228,7 @@ esc
 
 yum install -y mongodb-org
 
+systemctl enable mongod
 systemctl start mongod
 
 db.createUser({ user: "test",pwd: "1234",roles:[{ role: "userAdminAnyDatabase",db: "admin" }]})
@@ -248,8 +249,8 @@ sudo yum-config-manager --enable remi
 
 sudo yum install redis
 
-sudo systemctl start redis
 sudo systemctl enable redis
+sudo systemctl start redis
 
 sudo systemctl status redis
 
@@ -261,6 +262,8 @@ sudo systemctl restart redis
 ### nginx安装
 ```
 yum install nginx
+
+systemctl enable nginx
 systemctl start nginx
 ```
 
