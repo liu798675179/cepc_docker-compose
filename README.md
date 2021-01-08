@@ -296,6 +296,16 @@ https://mirrors.tuna.tsinghua.edu.cn/help/flutter/
 将配置变量存为全局且永久
 ```
 root用户登录，修改 /etc/profile文件
+
+#flutter
+export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
+export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
+export PATH="$PATH:/Users/lcy/dev/flutter/bin"
+
+#Android
+export PATH="$PATH:/Users/lcy/Library/Android/sdk/platform-tools"
+export PATH="$PATH:/Users/lcy/Library/Android/sdk/tools"
+
 刷新使配置生效
 source /etc/profile
 ```
