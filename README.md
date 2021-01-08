@@ -283,3 +283,19 @@ git --work-tree=/home/front/ --git-dir=/home/git/xxx.git checkout -f
 ```
 sed 's/^/"/g;s/$/",/g' input.txt >> output.txt
 ```
+
+## mac os tips
+
+### flutter 源的配置
+
+参考清华的源
+```
+https://mirrors.tuna.tsinghua.edu.cn/help/flutter/
+```
+
+将配置变量存为全局且永久
+```
+root用户登录，修改 /etc/profile文件
+刷新使配置生效
+source /etc/profile
+```
