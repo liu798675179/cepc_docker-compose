@@ -299,3 +299,15 @@ root用户登录，修改 /etc/profile文件
 刷新使配置生效
 source /etc/profile
 ```
+
+使用
+```
+flutter create <project>
+```
+创建工程后，一定要更改com.example，再
+```
+futter run
+flutter clean
+futter run
+```
+
