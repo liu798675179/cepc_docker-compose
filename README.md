@@ -217,6 +217,8 @@ pm2 start npm --name "aw-front" -- run start --watch -save
 ```
 vim /etc/yum.repos.d/mongodb.repo
 
+i
+
 [mongodb-org]
 name=MongoDB Repository
 baseurl=https://mirrors.tuna.tsinghua.edu.cn/mongodb/yum/el$releasever/
