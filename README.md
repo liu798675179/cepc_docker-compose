@@ -203,7 +203,7 @@ fdfs_test /etc/fdfs/client.conf upload index.html
 ```
 yum install -y gcc-c++ make
 curl -sL https://rpm.nodesource.com/setup_14.x | sudo -E bash -
-yum install nodejs
+yum install nodejs -y
 npm config set registry https://registry.npm.taobao.org
 ```
 
@@ -245,11 +245,11 @@ CryptoJS.enc.Hex.stringify(CryptoJS.HmacSHA256('timestamp=' + timestamp, 'YXXVbX
 
 ### redis安装
 ```
-sudo yum install epel-release yum-utils
-sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+sudo yum install epel-release yum-utils -y
+sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
 sudo yum-config-manager --enable remi
 
-sudo yum install redis
+sudo yum install redis -y
 
 sudo systemctl enable redis
 sudo systemctl start redis
@@ -263,7 +263,7 @@ sudo systemctl restart redis
 
 ### nginx安装
 ```
-yum install nginx
+yum install nginx -y
 
 systemctl enable nginx
 systemctl start nginx
