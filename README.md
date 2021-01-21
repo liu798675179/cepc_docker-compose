@@ -291,6 +291,11 @@ sed 's/^/"/g;s/$/",/g' input.txt >> output.txt
 dir *.* /b> 列表.txt
 ```
 
+### excel 加引号及逗号
+```
+="'"&A1&"'"&","
+```
+
 ## mac os tips
 
 ### flutter 源的配置
