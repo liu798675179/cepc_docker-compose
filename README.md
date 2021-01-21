@@ -286,6 +286,11 @@ git --work-tree=/home/front/ --git-dir=/home/git/xxx.git checkout -f
 sed 's/^/"/g;s/$/",/g' input.txt >> output.txt
 ```
 
+### 获取该目录下所有文件的文件名
+```
+dir *.* /b> 列表.txt
+```
+
 ## mac os tips
 
 ### flutter 源的配置
