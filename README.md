@@ -89,7 +89,13 @@ $ sudo yum install java-11-openjdk.x86_64
 ```
 ### 2、为保证顺利，先设置虚拟内存至少为262144(256mb)、524288(512mb)、1048576(1024mb, 4核8G)
 ```
+// 零时
 $ sudo sysctl -w vm.max_map_count=1048576
+
+// 永久
+vim /etc/sysctl.conf
+vm.max_map_count=1048576
+sysctl -p
 ```
 
 ### 3、安装docker-compose
