@@ -94,7 +94,14 @@ $ sudo sysctl -w vm.max_map_count=1048576
 
 永久
 vim /etc/sysctl.conf
+
+i
+
 vm.max_map_count=1048576
+
+esc
+:wq!
+
 sysctl -p
 ```
 
