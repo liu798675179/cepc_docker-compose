@@ -298,7 +298,7 @@ systemctl start nginx
 ### git安装
 ```
 yum install git
-cd /hume/git
+cd /home/git
 mkdir xxx.git && cd xxx.git
 git init --bare
 # 创建hooks/post-recive
