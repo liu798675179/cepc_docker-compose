@@ -276,6 +276,19 @@ sudo systemctl restart redis
 
 ### nginx安装
 ```
+vim /etc/yum.repos.d/nginx.repo
+
+i
+
+[nginx]
+name=nginx repo
+baseurl=https://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=0
+enabled=1
+
+esc
+:wq!
+
 yum install nginx -y
 
 systemctl enable nginx
