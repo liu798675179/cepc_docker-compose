@@ -303,6 +303,8 @@ mkdir xxx.git && cd xxx.git
 git init --bare
 # 创建hooks/post-receive
 # 更改权限0755
+chmod +x /home/git/AW_front.git/hooks/post-receive
+#写入以下内容
 git --work-tree=/home/front/ --git-dir=/home/git/xxx.git checkout -f
 # /home/front必须存在
 ```
