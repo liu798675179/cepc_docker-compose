@@ -297,7 +297,7 @@ systemctl start nginx
 
 ### git安装
 ```
-yum install git
+yum install git -y
 cd /home/git
 mkdir xxx.git && cd xxx.git
 git init --bare
