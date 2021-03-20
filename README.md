@@ -346,3 +346,21 @@ flutter clean
 futter run
 ```
 
+## AWS使用密码登录
+```
+首先要重置root密码
+sudo passwd root
+
+切换到root帐号
+su
+
+重置centos的密码
+passwd centos
+
+输入这几条命令
+sed -ri 's/^#?(PasswordAuthentication)\s+(yes|no)/\1 yes/' /etc/ssh/sshd_config
+sed -ri 's/^#?(PermitRootLogin)\s+(yes|no)/\1 yes/' /etc/ssh/sshd_config
+sed -ri 's/^/#/;s/sleep 10"\s+/&\n/' /root/.ssh/authorized_keys
+service sshd restart
+```
+
