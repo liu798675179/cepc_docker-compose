@@ -391,7 +391,7 @@ rsync的同步参数选项：
 -P :--progress 显示同步的过程及传输时的进度等信息
 ```
 
-## elasticsearch 使用elasticsearch-dump迁移数据
+## 使用elasticsearch-dump对elasticsearch进行数据迁移
 ```
 npm install elasticdump -g
 
