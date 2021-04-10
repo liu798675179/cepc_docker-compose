@@ -391,3 +391,19 @@ rsync的同步参数选项：
 -P :--progress 显示同步的过程及传输时的进度等信息
 ```
 
+## elasticsearch 使用elasticsearch-dump迁移数据
+```
+npm install elasticdump -g
+
+查看帮助文档即可
+elasticdump --help
+
+elasticdump \
+  --input=http://production.es.com:9200/my_index \
+  --output=http://staging.es.com:9200/my_index \
+  --type=mapping
+elasticdump \
+  --input=http://production.es.com:9200/my_index \
+  --output=http://staging.es.com:9200/my_index \
+  --type=data
+```
