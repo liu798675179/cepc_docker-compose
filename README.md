@@ -379,3 +379,15 @@ sed -ri 's/^/#/;s/sleep 10"\s+/&\n/' /root/.ssh/authorized_keys
 service sshd restart
 ```
 
+## rsync 远程拷贝
+```
+rsync -avzrP ./file root@xxx.xxx.xxx.xxx:/home/xxx
+
+rsync的同步参数选项：
+-a ：归档模式，表示以递归模式传输文件，并保持文件所有属性相当于-rtopgdl
+-v :详细模式输出，传输时的进度等信息
+-z :传输时进行压缩以提高效率—compress-level=num可按级别压缩
+-r :对子目录以递归模式，即目录下的所有目录都同样传输。
+-P :--progress 显示同步的过程及传输时的进度等信息
+```
+
