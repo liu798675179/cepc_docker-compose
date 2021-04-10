@@ -49,7 +49,7 @@ $ sudo yum makecache fast
 
 ### 5、安装最新docker-ce
 ```
-$ sudo yum install docker-ce
+$ sudo yum install docker-ce -y
 ```
 
 ### 6、测试
@@ -107,7 +107,7 @@ sysctl -p
 
 ### 3、安装docker-compose
 ```
-$ sudo yum install docker-compose
+$ sudo yum install docker-compose -y
 ```
 ### 4、使用docker-compose安装这些软件
 
@@ -303,7 +303,7 @@ mkdir xxx.git && cd xxx.git
 git init --bare
 # 创建hooks/post-receive
 # 更改权限0755
-chmod +x /home/git/AW_front.git/hooks/post-receive
+chmod +x /home/git/xxx.git/hooks/post-receive
 #写入以下内容
 git --work-tree=/home/front/ --git-dir=/home/git/xxx.git checkout -f
 # /home/front必须存在
