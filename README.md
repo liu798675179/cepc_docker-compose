@@ -407,3 +407,18 @@ elasticdump \
   --output=http://staging.es.com:9200/my_index \
   --type=data
 ```
+
+## 同步时间
+```
+安装utpdate工具
+yum -y install utp ntpdate
+
+设置系统时间与网络时间同步
+ntpdate cn.pool.ntp.org
+
+将系统时间写入硬件时间
+hwclock --systohc
+
+设置系统时区为上海
+timedatectl set-timezone Asia/Shanghai 
+```
