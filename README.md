@@ -338,8 +338,8 @@ https://mirrors.tuna.tsinghua.edu.cn/help/flutter/
 root用户登录，修改 /etc/profile文件
 
 #flutter
-export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
-export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
+echo 'export FLUTTER_STORAGE_BASE_URL="https://opentuna.cn/flutter"' >> ~/.bashrc
+echo 'export PUB_HOSTED_URL="https://opentuna.cn/dart-pub"' >> ~/.bashrc
 export PATH="$PATH:/Users/lcy/dev/flutter/bin"
 
 #Android
