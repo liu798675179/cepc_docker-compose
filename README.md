@@ -292,7 +292,7 @@ esc
 yum install nginx -y
 
 <!-- 坑，不会自动安装一些模块时 -->
-yum install nginx-mod-*
+yum install nginx-mod-* -y
 
 systemctl enable nginx
 systemctl start nginx
