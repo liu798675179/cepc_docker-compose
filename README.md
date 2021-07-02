@@ -336,6 +336,14 @@ dir *.* /b> 列表.txt
 https://mirrors.tuna.tsinghua.edu.cn/help/flutter/
 ```
 
+```
+maven { url 'https://maven.aliyun.com/repository/google' }
+maven { url 'https://maven.aliyun.com/repository/jcenter' }
+maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+
+https://storage.flutter-io.cn/download.flutter.io
+```
+
 将配置变量存为全局且永久
 ```
 root用户登录，修改 /etc/profile文件
