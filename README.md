@@ -373,6 +373,11 @@ flutter clean
 futter run
 ```
 
+解决：Timeout waiting to lock xxx cache......
+```
+find ~/.gradle -type f -name "*.lock" -delete
+```
+
 ## AWS使用密码登录
 ```
 首先要重置root密码
